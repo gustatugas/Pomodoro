@@ -1,0 +1,84 @@
+:root {
+    --cor-padrao: #1e2430;
+    --cor-fonte: #fff;
+    --cor-divisao: #3a4966;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+/* Aplicando estilo no body */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Ajustando cabeçalho */
+header {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--cor-padrao);
+    color: var(--cor-fonte);
+    user-select: none;
+}
+
+/* Ajustando o corpo principal do pomodoro */
+main {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    color: var(--cor-fonte);
+}
+
+/* Ajustando classe do navbar */
+
+.navbar {
+    background-color: var(--cor-padrao);
+    height: 100vh;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 275px;
+    height: 100px;
+    border: 1.5px solid var(--cor-divisao);
+    user-select: none;
+}
+
+.title:hover {
+    cursor: pointer;
+}
+
+#tarefas {
+    flex-direction: co;
+    border-bottom: none;
+}
+/* Dividindo a tela para o display */
+
+/* TEMPORARIO, RETIRAR DEPOIS */
+
+.display {
+    text-align: center;
+    width: 100vw;
+    background-color:crimson;
+}
+
+/* Ajustando seção tarefas */
+
+.add-tarefa {
+    padding: 10px;
+    border-bottom: 1px solid var(--cor-divisao);
+}
+
+.add-tarefa input {
+    margin-right: 10px;
+}
+
+.add-tarefa:first-child {
+    border-top: 1px solid var(--cor-divisao);
+}
+
