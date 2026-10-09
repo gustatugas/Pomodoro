@@ -2,6 +2,7 @@
     --cor-padrao: #1e2430;
     --cor-fonte: #fff;
     --cor-divisao: #3a4966;
+    --cor-placeholder: #9aa5bd;
 }
 
 * {
@@ -53,9 +54,12 @@ main {
     cursor: pointer;
 }
 
+
 #tarefas {
-    flex-direction: co;
+    justify-content: space-between;
     border-bottom: none;
+    padding: 15px;
+    cursor: auto;
 }
 /* Dividindo a tela para o display */
 
@@ -69,16 +73,56 @@ main {
 
 /* Ajustando seção tarefas */
 
-.add-tarefa {
-    padding: 10px;
-    border-bottom: 1px solid var(--cor-divisao);
-}
-
-.add-tarefa input {
-    margin-right: 10px;
-}
+.rolagem-tarefas {
+    max-height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}    
 
 .add-tarefa:first-child {
     border-top: 1px solid var(--cor-divisao);
 }
 
+/* Estilizando o texto de entrada de tarefa */
+
+#text-tarefa {
+    padding: 10px 5px;
+    background-color: var(--cor-divisao);
+    border: none;
+    border-radius: 5px;
+    color: var(--cor-fonte);
+}
+
+input::placeholder {
+    color: var(--cor-placeholder);
+}
+/* Estilizando o "+" */
+#adicao {
+    padding: 0px 6px;
+    font-size: x-large;
+    border: 2px solid var(--cor-fonte);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease
+}
+
+#adicao:hover {
+    transform: scale(1.15);
+}
+
+/* Após manipulação de evento, criará .tarefas-item, estilizar para display */
+
+.tarefas-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    padding: 10px;
+}
+
+/* Traçar linha na tarefa que for concluída */
+.tarefas-item.concluida {
+    color: var(--cor-placeholder);
+    text-decoration: line-through;
+}
