@@ -119,6 +119,23 @@ input::placeholder {
     gap: 10px;
     list-style: none;
     padding: 10px;
+    transition: background-color 0.25s ease;
+}
+
+.tarefas-item:hover {
+    background-color: #3a4966;
+}
+
+.remover {
+    display: none;
+    margin-left: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.tarefas-item:hover .remover {
+    display: block;
 }
 
 /* Traçar linha na tarefa que for concluída */
