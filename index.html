@@ -7,6 +7,7 @@
     <title>Pomodoro</title>
 </head>
 <body>
+    <video class="video-fundo" type="video/mp4" src="video/campo_florido_pixel_art_animado_1min.mp4" autoplay loop muted></video>
     <!-- Cabeçalho -->
     <header>
         <h1>Seu Pomodoro</h1>
@@ -14,18 +15,46 @@
 
     <main>
         <nav class="navbar">
-            <div class="title">
-                <p>Pomodoro</p>
-            </div>
-            <div class="title">
-                <p>Hoje</p>
-            </div>
-            <div class="title">
-                <p>Concluidas</p>
+            <div class="title" id="pomodoro">
+                <P>Tempo de Foco</P>
+                <select name="lista-minutos" id="lista-minutos">
+                    <option value="5">5 minutos</option>
+                    <option value="10">10 minutos</option>
+                    <option value="15">15 minutos</option>
+                    <option value="20">20 minutos</option>
+                    <option value="25">25 minutos</option>
+                    <option value="30">30 minutos</option>
+                    <option value="35">35 minutos</option>
+                    <option value="40">40 minutos</option>
+                    <option value="45">45 minutos</option>
+                    <option value="50">50 minutos</option>
+                    <option value="55">55 minutos</option>
+                    <option value="60">60 minutos</option>
+                </select>
+                
+                <button id="start">Começar</button>
             </div>
 
+            <div class="title" id="estudos">
+                <p>Tempo Total de Estudo</p>
+
+                <div id="displayFocoTotal"></div>
+
+            </div>
+
+            <div class="title" id="tempoDescansoSelecionado">
+                <p>Tempo de Descanso</p>
+
+                <div class="tempoDescansoClasse">
+                    <select name="tempoDescanso" id="tempoDescanso">
+                        <option value="5">5 minutos</option>
+                        <option value="10">10 minutos</option>
+                        <option value="15">15 minutos</option>
+                    </select>
+                </div>
+            </div>
             <div class="title" id="tarefas">
-                <input type="text" name="texto-tarefa" id="text-tarefa" placeholder="Tarefa/Objetivo">
+                <input type="text" name="texto-tarefa" id="text-tarefa" placeholder="Tarefa/Objetivo" maxlength="40" spellcheck="false">
 
                 <button id="adicao"> + </button>
             </div>
@@ -35,15 +64,21 @@
                     <!-- Aqui será adicionado pelo JS -->
                 </ul>
             </div>
-
         </nav>
 
-        <section class="display">
-            <p>Display será aqui</p>
-        </section>
+        <div class="display">
+            <p id="display-pomodoro"></p>
+
+            <div class="midiaControladora">
+                <button class="midia" id="pausa">❚❚</button>
+                <button class="midia" id="reproduzir">▶</button>
+                <button class="midia" id="reiniciar">↻</button>
+            </div>
+        </div>
     </main>
 
 
     <script src="script/script.js"></script>
+    <script src="script/pomodoro.js"></script>
 </body>
 </html>

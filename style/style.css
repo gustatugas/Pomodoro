@@ -3,6 +3,7 @@
     --cor-fonte: #fff;
     --cor-divisao: #3a4966;
     --cor-placeholder: #9aa5bd;
+    --cor-opcoes: #000;
 }
 
 * {
@@ -29,15 +30,19 @@ header {
 main {
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: 100%;
     color: var(--cor-fonte);
 }
 
+li {
+    overflow-wrap: anywhere;
+    word-break: break-all;
+}
 /* Ajustando classe do navbar */
 
 .navbar {
     background-color: var(--cor-padrao);
-    height: 100vh;
+    max-width: 100%;
 }
 
 .title {
@@ -45,17 +50,73 @@ main {
     align-items: center;
     justify-content: center;
     width: 275px;
-    height: 100px;
+    height: 120px;
     border: 1.5px solid var(--cor-divisao);
     user-select: none;
 }
-
 .title:hover {
     cursor: pointer;
 }
 
+#estudos {
+    height: 150PX;
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#tempoDescansoSelecionado {
+    flex-direction: column;
+    gap: 20px;
+    height: 150px;
+}
+
+
+#displayFocoTotal {
+    font-size: 30px;
+}
+
+#pomodoro {
+    height: 200px;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#lista-minutos, #tempoDescanso {
+    padding: 20px;
+    background: none;
+    width: 200px;
+    color: var(--cor-fonte);
+    border: none;
+    font-size: 20px;
+    border: 1px solid var(--cor-divisao);
+    border-radius: 15px;
+}
+
+#start {
+    padding: 5px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--cor-fonte);
+    transition: transform 0.3s ease-in-out;
+}
+
+#start:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    border: 1px solid var(--cor-divisao);
+    border-radius: 10px;
+}
+
+option {
+    color: var(--cor-fonte);
+    background-color: var(--cor-padrao);
+}
 
 #tarefas {
+    align-items: baseline;
+    height: 250px;
     justify-content: space-between;
     border-bottom: none;
     padding: 15px;
@@ -66,11 +127,39 @@ main {
 /* TEMPORARIO, RETIRAR DEPOIS */
 
 .display {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    font-variant-numeric: tabular-nums;
+    font-size: 6rem;
     text-align: center;
-    width: 100vw;
-    background-color:crimson;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    user-select: none;
 }
 
+#display-pomodoro {
+    margin-top: 250px;
+}
+
+/* Ajustando botão de midia */
+
+.midiaControladora {
+    display: flex;
+    gap: 20px;
+}
+.midia {
+    font-size: 30px;
+    color: var(--cor-fonte);
+    background: none;
+    padding: 10px 15px;
+    border: 1px solid var(--cor-fonte);
+    border-radius: 15px;
+}
+
+.midia:hover {
+    cursor: pointer;
+}
 /* Ajustando seção tarefas */
 
 .rolagem-tarefas {
@@ -119,9 +208,13 @@ input::placeholder {
     gap: 10px;
     list-style: none;
     padding: 10px;
+    overflow-wrap: break-word;
     transition: background-color 0.25s ease;
 }
 
+.tarefas-item li {
+    width: 250px;
+}
 .tarefas-item:hover {
     background-color: #3a4966;
 }
@@ -142,4 +235,13 @@ input::placeholder {
 .tarefas-item.concluida {
     color: var(--cor-placeholder);
     text-decoration: line-through;
+}
+
+.video-fundo {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
