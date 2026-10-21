@@ -1,4 +1,4 @@
-# Pomodoro — Foco e Produtividade
+# Pomodoro - Foco e Produtividade
 
 Um projeto desenvolvido para auxiliar na organização dos estudos e na concentração durante as tarefas do dia a dia. A aplicação reúne um temporizador Pomodoro, uma lista de tarefas e um histórico diário de tempo de estudo, com um campo florido em pixel art como plano de fundo.
 
