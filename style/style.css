@@ -15,6 +15,12 @@
 /* Aplicando estilo no body */
 body {
     font-family: Arial, Helvetica, sans-serif;
+    /* A página sempre ocupa a tela toda, para o painel escuro
+       e a camada sobre o vídeo irem até o fim, mesmo sem tarefas */
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Ajustando cabeçalho */
@@ -30,7 +36,7 @@ header {
 main {
     display: flex;
     flex-direction: row;
-    height: 100%;
+    flex: 1;
     color: var(--cor-fonte);
 }
 
@@ -116,7 +122,7 @@ option {
 
 #tarefas {
     align-items: baseline;
-    height: 250px;
+    height: auto;
     justify-content: space-between;
     border-bottom: none;
     padding: 15px;
@@ -335,8 +341,17 @@ input::placeholder {
 
     /* A lista de tarefas ocupa a largura toda da grade */
     .rolagem-tarefas {
-        grid-column: 1 / -1;
         max-height: 220px;
+    }
+
+    /* Input + lista de tarefas formam um bloco só, na largura toda da grade */
+    .bloco-tarefas {
+        grid-column: 1 / -1;
+    }
+
+    /* Descanso ocupa a linha toda, para não sobrar uma célula vazia */
+    #tempoDescansoSelecionado {
+        grid-column: 1 / -1;
     }
 }
 
